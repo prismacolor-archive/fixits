@@ -1,0 +1,19 @@
+'''this will allow you to iterrate over rows in a pandas data frame, index said row and then append another value to a list.'''
+
+import pandas
+
+data = {'first': [1, 2, 3, 4],
+        'second': [2, 2, 4, 5],
+        'third': [2, 5, 6, 7]}
+
+mydf = pandas.DataFrame(data, columns = ['first', 'second', 'third'])
+print(mydf)
+mylist2 = []
+
+for row in mydf.itertuples():
+    item = list(row)
+    print(item)
+    if item[2] == 2:
+        mylist2.append(item[3])
+
+print(mylist2)
